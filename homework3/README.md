@@ -6,7 +6,5 @@ annotation on fields of type `String`,
 reads `key` and assigns localized string
 according to user locale
 
- - Translated string should be stored in
-property files, look at Java
-ResourceBundle as an example
+ - Translated string should be stored in property files, look at Java [ResourceBundle](https://docs.oracle.com/javase/7/docs/api/java/util/ResourceBundle.html) as an example
  - [Understanding Locale in the Java Platform](https://www.oracle.com/technetwork/articles/java/locale-140624.html)
