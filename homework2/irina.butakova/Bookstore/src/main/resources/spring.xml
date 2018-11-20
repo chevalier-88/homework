@@ -1,0 +1,21 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+    <bean id="book_dao"
+          name="dao"
+          class="io.github.badgateway12.jee.beans.BookDAO">
+    </bean>
+
+    <bean id="cart"
+          name="cart"
+          class="io.github.badgateway12.jee.beans.Cart">
+        <constructor-arg index="0" ref="dao"/>
+    </bean>
+
+    <bean id="search_filter"
+          name="filter"
+          class="io.github.badgateway12.jee.beans.BookSearchFilter">
+    </bean>
+</beans>
