@@ -1,0 +1,29 @@
+<?xmlconfig version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+ 		http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+ 		http://www.springframework.org/schema/context
+ 		http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:property-placeholder location="bookstore.properties" file-encoding="UTF-8"/>
+
+    <bean class="xmlconfig.beans.BookStore" c:showShelf-ref="showShelf"/>
+
+    <bean id="showShelf" class="xmlconfig.beans.ShowShelf" c:storage-ref="storage">
+        <constructor-arg name="books">
+            <list/>
+        </constructor-arg>
+    </bean>
+
+    <bean id="storage" class="xmlconfig.beans.Storage" c:bookFactory-ref="bookFactory">
+        <constructor-arg name="books">
+            <list/>
+        </constructor-arg>
+    </bean>
+
+    <bean id="bookFactory" class="xmlconfig.beans.BookFactory" c:batchSize="${batch.size}"/>
+
+</beans>

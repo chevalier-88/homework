@@ -7,12 +7,11 @@
     <groupId>hillel.jee</groupId>
     <artifactId>AndriiHubarenko</artifactId>
     <version>1.0-SNAPSHOT</version>
-
     <developers>
         <developer>
             <id>AndriiHubarenko</id>
             <name>Andrii Hubarenko</name>
-            <email>Andrewgubarenko@gmail.com</email>
+            <email>AndrewGubarenko@gmail.com</email>
             <roles>
                 <role>developer</role>
             </roles>
@@ -26,7 +25,30 @@
         <maven.compiler.target>11</maven.compiler.target>
     </properties>
 
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-framework-bom</artifactId>
+                <version>5.0.7.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -34,4 +56,5 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
 </project>
