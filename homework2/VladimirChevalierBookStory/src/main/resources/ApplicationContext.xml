@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+       default-lazy-init="true">
+
+
+    <bean id="optimus" class="garbage.entities.tutor.OptimusModel" scope="prototype" init-method="init"
+          destroy-method="destroy">
+        <constructor-arg ref="id_sony_head"/>
+        <constructor-arg ref="id_sony_hand"/>
+        <constructor-arg ref="id_sony_leg"/>
+        <!--<property name="head" value="id_sony_head"/>-->
+        <!--<property name="hand" value="id_sony_hand"/>-->
+        <!--<property name="leg" value="id_sony_leg"/>-->
+    </bean>
+
+
+</beans>
+
+
+        <!--beans for garbage.entities.javaEE-->
+        <!--<bean class="garbage.entities.javaEE.Office">-->
+        <!--&lt;!&ndash;<property name="admin" ref="admin"/>&ndash;&gt;-->
+        <!--<property name="employee1" ref="manager"/>-->
+        <!--<property name="employee2" ref="admin"/>-->
+        <!--</bean>-->
+        <!--<bean id="manager" class="garbage.entities.javaEE.Manager">-->
+        <!--<property name="name" value="Vova"/>-->
+        <!--<property name="position" value="security manager"/>-->
+        <!--</bean>-->
+        <!--<bean id="admin" class="garbage.entities.javaEE.Admin">-->
+        <!--</bean>-->
